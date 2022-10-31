@@ -1,0 +1,67 @@
+{
+    "name": "react-json-view",
+    "description": "Interactive react component for displaying javascript arrays and JSON objects.",
+    "version": "1.21.3",
+    "main": "dist/main.js",
+    "dependencies": {
+        "flux": "^4.0.1",
+        "react-base16-styling": "^0.6.0",
+        "react-lifecycles-compat": "^3.0.4",
+        "react-textarea-autosize": "^8.3.2"
+    },
+    "peerDependencies": {
+        "react": "^17.0.0 || ^16.3.0 || ^15.5.4",
+        "react-dom": "^17.0.0 || ^16.3.0 || ^15.5.4"
+    },
+    "scripts": {
+        "build": "NODE_ENV=production webpack --config webpack/webpack.config.js -p --display-error-details --progress --optimize-minimize",
+        "build:demo": "NODE_ENV=production webpack --config webpack/webpack.config-demo.js -p --display-error-details --progress --optimize-minimize",
+        "dev": "NODE_ENV=development webpack-dev-server --config webpack/webpack.config-dev.js --open",
+        "modules:debug": "./docker/debug.sh",
+        "modules:tree": "webpack --config webpack/webpack.config.js --json ",
+        "modules:size-analyzer": "webpack --config webpack/webpack.config.js --json | webpack-bundle-size-analyzer",
+        "test": "npm run test:coverage",
+        "test:unit": "NODE_ENV=test nyc mocha test/**/*-test.js",
+        "test:coverage": "NODE_ENV=test nyc --reporter=text-lcov mocha test/**/*-test.js | coveralls",
+        "test:watch": "NODE_ENV=test nyc mocha -w test/**/*-test.js",
+        "lint": "NODE_ENV=test ./node_modules/.bin/eslint src",
+        "lint-fixup": "NODE_ENV=test ./node_modules/.bin/eslint src --ext .js,.jsx --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mac-s-g/react-json-view.git"
+    },
+    "keywords": [
+        "array-viewer",
+        "base-16",
+        "component",
+        "interactive",
+        "interactive-json",
+        "json",
+        "json-component",
+        "json-display",
+        "json-tree",
+        "json-view",
+        "json-viewer",
+        "json-inspector",
+        "json-tree",
+        "react",
+        "react-component",
+        "react-json",
+        "theme",
+        "tree",
+        "tree-view",
+        "treeview"
+    ],
+    "license": "MIT",
+    "author": "Mac Gainor",
+    "bugs": {
+        "url": "https://github.com/mac-s-g/react-json-view/issues"
+    },
+    "homepage": "https://github.com/mac-s-g/react-json-view",
+    "directories": {
+        "docs": "docs",
+        "test": "test"
+    },
+    "yalcSig": "110aac3ec4b1b6f6f2c98c4cbbc1f6e0"
+}
